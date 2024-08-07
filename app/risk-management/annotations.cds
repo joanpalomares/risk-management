@@ -51,29 +51,52 @@ annotate service.Risks with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'title',
+            Label : '{i18n>Title}',
             Value : title,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'owner',
+            Value : miti.descr,
+            Label : '{i18n>Mitigation}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>Owner}',
             Value : owner,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'prio_code',
+            Label : '{i18n>Priority}',
             Value : prio_code,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'descr',
-            Value : descr,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : 'impact',
+            Label : '{i18n>Impact}',
             Value : impact,
         },
     ],
 );
 
+annotate service.Risks with @(
+    UI.SelectionFields : [
+        prio_code,
+    ]
+);
+annotate service.Risks with {
+    prio @Common.Label : '{i18n>Priority}'
+};
+annotate service.Risks with @(
+    UI.HeaderInfo : {
+        Title : {
+            $Type : 'UI.DataField',
+            Value : title,
+        },
+        TypeName : '',
+        TypeNamePlural : '',
+        Description : {
+            $Type : 'UI.DataField',
+            Value : descr,
+        },
+        TypeImageUrl : 'sap-icon://alert',
+    }
+);
