@@ -36,7 +36,7 @@ entity Priority : CodeList {
 }
 
 
-// using an external service from SAP S/4HANA Cloud
+// using an external service API from SAP S/4HANA Cloud
 using {API_BUSINESS_PARTNER as external} from '../srv/external/API_BUSINESS_PARTNER.csn';
 
 
